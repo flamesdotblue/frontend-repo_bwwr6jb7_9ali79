@@ -2,9 +2,9 @@ import { Heart } from "lucide-react";
 
 function ProgressBar({ value }) {
   return (
-    <div className="w-full h-2 rounded-full bg-slate-200 overflow-hidden">
+    <div className="w-full h-2 rounded-full bg-emerald-100 overflow-hidden">
       <div
-        className="h-full bg-red-600"
+        className="h-full bg-emerald-600"
         style={{ width: `${Math.min(100, Math.max(0, value))}%` }}
       />
     </div>
@@ -14,23 +14,23 @@ function ProgressBar({ value }) {
 function CampaignCard({ image, title, location, raised, goal }) {
   const progress = Math.round((raised / goal) * 100);
   return (
-    <div className="rounded-xl border border-slate-200 bg-white overflow-hidden hover:shadow-md transition-shadow">
+    <div className="rounded-xl border border-emerald-100 bg-white overflow-hidden hover:shadow-md transition-shadow">
       <div className="aspect-[4/3] w-full overflow-hidden">
         <img src={image} alt={title} className="h-full w-full object-cover" />
       </div>
       <div className="p-4">
-        <p className="text-xs text-slate-500">{location}</p>
-        <h3 className="mt-1 font-semibold text-slate-900 line-clamp-2">{title}</h3>
+        <p className="text-xs text-emerald-700/70">{location}</p>
+        <h3 className="mt-1 font-semibold text-emerald-950 line-clamp-2">{title}</h3>
         <div className="mt-3">
           <ProgressBar value={progress} />
-          <div className="mt-2 flex items-center justify-between text-sm text-slate-600">
+          <div className="mt-2 flex items-center justify-between text-sm text-emerald-800/80">
             <span>
               NPR {raised.toLocaleString()} raised
             </span>
-            <span className="text-slate-500">of NPR {goal.toLocaleString()}</span>
+            <span className="text-emerald-700/70">of NPR {goal.toLocaleString()}</span>
           </div>
         </div>
-        <button className="mt-4 inline-flex items-center gap-2 w-full justify-center rounded-md bg-red-600 px-4 py-2 text-white font-medium hover:bg-red-700">
+        <button className="mt-4 inline-flex items-center gap-2 w-full justify-center rounded-md bg-emerald-600 px-4 py-2 text-white font-medium hover:bg-emerald-700">
           <Heart className="h-4 w-4" /> Donate now
         </button>
       </div>
@@ -75,14 +75,14 @@ export default function CampaignGrid() {
   ];
 
   return (
-    <section id="campaigns" className="bg-slate-50 py-14 sm:py-20">
+    <section id="campaigns" className="bg-gradient-to-b from-white to-emerald-50 py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">Featured campaigns</h2>
-            <p className="mt-2 text-slate-600 text-sm sm:text-base">Verified stories from across Nepal and the diaspora.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-emerald-950">Featured campaigns</h2>
+            <p className="mt-2 text-emerald-800/80 text-sm sm:text-base">Verified stories from across Nepal and the diaspora.</p>
           </div>
-          <a href="#" className="hidden sm:inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-white">View all</a>
+          <a href="#campaigns" className="hidden sm:inline-flex rounded-md border border-emerald-200 px-4 py-2 text-sm font-medium text-emerald-800 hover:bg-emerald-50">View all</a>
         </div>
 
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
